@@ -19,7 +19,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'itchyny/lightline.vim'
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'ludovicchabant/vim-gutentags'
   Plug 'tomtom/tcomment_vim'
   Plug 'mattn/emmet-vim'
   Plug 'sheerun/vim-polyglot'
