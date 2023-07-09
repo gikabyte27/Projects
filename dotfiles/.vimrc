@@ -6,6 +6,7 @@ endif
 
 map <C-q> :NERDTreeToggle<CR>
 set number
+colorscheme slate
 
 let b:fileList = split(globpath('~/.vim/main', '*.vim'), '\n')
 let b:fileList += split(globpath('~/.vim/custom-functions', '*.vim'), '\n')
