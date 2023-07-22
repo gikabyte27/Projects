@@ -278,7 +278,7 @@ check_sub_takeover
 check_wayback
 check_whatweb
 check_paramspider
-scan_ports $ALIVE_OUTPUT
+#scan_ports $ALIVE_OUTPUT
 screenshot_alive_subs
 #aws_bucket_regex
 #check_takeover_exists $services
