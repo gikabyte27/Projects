@@ -40,6 +40,6 @@ sudo apt update && sudo apt upgrade && sudo apt install hashcat
 cd '/opt/Projects/Password Generator/'
 echo 'password' > seed.txt # Generating the seed
 chmod +x ./generate_full_wordlist.sh
-bash ./generate_full_wordlist.sh
+bash ./generate_full_wordlist.sh seed.txt
 ```
 4. Enjoy!
