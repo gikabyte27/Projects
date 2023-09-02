@@ -11,6 +11,13 @@ if [ $# -eq 0 ]; then
 	exit 1
 fi
 
+RULE_LEETSPEAK=/opt/Projects/passwords/rules/leetspeak.rule
+RULE_PREPROCESS=/opt/Projects/passwords/rules/preprocess.rule
+RULE_NUMBERS_YEARS=/opt/Projects/passwords/rules/add_numbers_and_years.rule
+RULE_SPECIALS=/opt/Projects/passwords/rules/add_specials.rule
+RULE_SIMPLE_NUMBERS_YEARS=/opt/Projects/passwords/rules/simple_add_numbers_and_years.rule
+RULE_SIMPLE_SPECIALS=/opt/Projects/passwords/rules/simple_add_specials.rule
+
 #Initialize variables with default values
 leet_flag=true
 simple_flag=true
@@ -18,6 +25,7 @@ full_flag=false
 none_flag=false
 
 INTERIM_OUTPUT=$1
+OUTPUT=wordlist.txt
 
 # Prompt the user if they want to enable --leet
 read -p "Do you want to enable leet? (Y/n): " leet_response
@@ -53,20 +61,20 @@ fi
 if [ "$leet_flag" = true ]; then
   INTERIM_OUTPUT=leet_sorted_$1.txt
   echo "Step 1: Performing --leet"
-  hashcat $1 --rules leetspeak.rule --stdout | sort | uniq > $INTERIM_OUTPUT
+  hashcat $1 --rules $RULE_LEETSPEAK --stdout | sort | uniq > $INTERIM_OUTPUT
   # Perform actions for --leet
 fi
 
 if [ "$simple_flag" = true ]; then
   echo "Step 2: Performing --simple"
   # Perform actions for --simple
-  hashcat $INTERIM_OUTPUT --rules simple_add_numbers_and_years.rule --rules simple_add_specials.rule --stdout | sort | uniq > $OUTPUT
+  hashcat $INTERIM_OUTPUT --rules $RULE_SIMPLE_NUMBERS_YEARS --rules $RULE_SIMPLE_SPECIALS --stdout | sort | uniq > $OUTPUT
 fi
 
 if [ "$full_flag" = true ]; then
   echo "Step 2: Performing --full"
   # Perform actions for --full
-  hashcat $INTERIM_OUTPUT --rules preprocess.rule --rules add_numbers_and_years.rule --rules add_specials.rule --stdout | sort | uniq > $OUTPUT
+  hashcat $INTERIM_OUTPUT --rules $RULE_PREPROCESS --rules $RULE_NUMBERS_YEARS --rules $RULE_SPECIALS --stdout | sort | uniq > $OUTPUT
 fi
 
 if [ "$none_flag" = true ]; then
