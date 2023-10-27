@@ -83,7 +83,6 @@ fi
 
 echo "Wordlist generated!"
 wc -l $OUTPUT
-rm -rf $INTERIM_OUTPUT
 
 # Process non-option arguments (if any)
 shift $((OPTIND-1))
