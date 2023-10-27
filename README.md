@@ -1,4 +1,4 @@
 # Projects
 Personal Projects
 
-This repository hosts a collection of personal projects I have done.
+This repository is the home of several personal projects am actively working on.
