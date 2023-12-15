@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get update -y --force-yes && sudo apt-get -y --force-yes install netcat-openbsd net-tools bmon tcpdump tmux python3-full python3-pip nmap ffuf
+sudo apt-get update -y --force-yes && sudo apt-get -y --force-yes install netcat-openbsd net-tools bmon tcpdump tmux python3-full python3-pip nmap ffuf chromium
 apt install -y golang
 ZSH_CONFIG=$HOME/.zshrc
 BASH_CONFIG=$HOME/.bashrc
@@ -18,7 +18,9 @@ source $PROFILE
 go install -v github.com/haccer/subjack@latest
 go install -v github.com/tomnomnom/waybackurls@latest
 go install -v github.com/tomnomnom/assetfinder@latest
+go install -v github.com/tomnomnom/httprobe@latest
 go install -v github.com/owasp-amass/amass/v4/...@master
+go install -v github.com/sensepost/gowitness@latest
 
 git clone https://github.com/devanshbatham/ParamSpider /opt/ParamSpider
 git clone https://github.com/aboul3la/Sublist3r.git /opt/Sublist3r && pip install -r /opt/Sublist3r/requirements.txt --break-system-packages && pip3 install /opt/Sublist3r/ --break-system-packages
