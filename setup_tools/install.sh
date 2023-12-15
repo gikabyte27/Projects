@@ -21,6 +21,10 @@ go install -v github.com/tomnomnom/assetfinder@latest
 go install -v github.com/ffuf/ffuf/v2@latest
 
 git clone https://github.com/devanshbatham/ParamSpider /opt/ParamSpider
+wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O /usr/share/SecList.zip \
+	  && unzip /usr/share/SecList.zip -d /usr/share/ \
+		  && rm -f /usr/share/SecList.zip \
+			&& mv /usr/share/SecLists-master/ /usr/share/seclists
 pip3 install /opt/ParamSpider/ --break-system-packages
 
 pip install git+https://github.com/blacklanternsecurity/trevorproxy --break-system-packages
