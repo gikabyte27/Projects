@@ -1,0 +1,2 @@
+evil.dtd hosted on own server-only retrieved file is modified
+Add &exfil call inside a foo object (might need to add entity any)

