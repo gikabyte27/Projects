@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+if [ $# -ne 1 ]; then
+	echo "Usage: $0 <file_to_sort>"
+	exit 1
+fi
+
+TARGET=$1
+
+cp ${TARGET} ${TARGET}.bak && \
+cat ${TARGET} | sort -u | uniq > sorted_${TARGET} && \
+mv sorted_${TARGET} ${TARGET}
+
+echo "Old file has been renamed as ${TARGET}.bak"
+
