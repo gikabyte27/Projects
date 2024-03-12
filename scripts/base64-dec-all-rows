@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ -p /dev/stdin ]; then
+  # Read from pipe
+  while IFS=$'\n' read -r line; do
+    echo -n "$line" | base64 -d && echo
+  done
+else
+  # Check if a file argument is provided
+  if [ $# -lt 1 ]; then
+    echo "Usage: $0 <file_to_base64_decode_lines>"
+    exit 1
+  fi
+
+  while IFS=$'\n' read -r line; do
+      echo -n "$line" | base64 -d && echo
+  done < "$1"
+fi
