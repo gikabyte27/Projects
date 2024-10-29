@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Check if the input file exists
+if [ ! -f "$1" ]; then
+    echo "Input file not found!"
+    exit 1
+fi
+
+# Read words from the input file into an array
+readarray -t words < "$1"
+
+# Loop through the array to generate combinations
+for (( i = 0; i < ${#words[@]}; i++ )); do
+    for (( j = 0; j < ${#words[@]}; j++ )); do
+        if [[ $i != $j ]]; then
+            echo "${words[i]}${words[j]}"
+        fi
+    done
+done
