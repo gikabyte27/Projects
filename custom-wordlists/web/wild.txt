@@ -1,2 +1,4 @@
 s4m-dashboard
 api
+mywalletv1
+mywallet
